@@ -1,10 +1,9 @@
-from abc import abstractmethod
 import json
 from inventory_report.importer.importer import Importer
 
 
 class JsonImporter(Importer):
-    @abstractmethod
+    @staticmethod
     def import_data(path: str):
         try:
             with open(path, mode="r") as file:

@@ -1,11 +1,10 @@
 from inventory_report.importer.importer import Importer
-from abc import abstractmethod
 
 import csv
 
 
 class CsvImporter(Importer):
-    @abstractmethod
+    @staticmethod
     def import_data(path: str):
         data = []
 
