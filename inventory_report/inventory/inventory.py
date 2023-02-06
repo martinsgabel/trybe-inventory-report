@@ -10,8 +10,8 @@ class Inventory:
         data = []
 
         with open(path, mode="r") as file:
-            cvs_file = csv.DictReader(file)
-            for line in cvs_file:
+            csv_file = csv.DictReader(file)
+            for line in csv_file:
                 data.append(line)
 
         if type == "simple":

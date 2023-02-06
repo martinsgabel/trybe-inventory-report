@@ -6,23 +6,22 @@ class SimpleReport:
     @staticmethod
     def generate(list_of_dict: list):
         fab_date = [
-            list_of_dict["data_de_fabricacao"] for item in list_of_dict
+            item["data_de_fabricacao"] for item in list_of_dict
         ]
 
         valid_date = [
-            list_of_dict["data_de_validade"] for item in list_of_dict
-            if list_of_dict["data_de_validade"] > str(date.today())
+            item["data_de_validade"] for item in list_of_dict
+            if item["data_de_validade"] > str(date.today())
         ]
 
         companies = [
-            list_of_dict["nome_da_empresa"] for item in list_of_dict
+            item["nome_da_empresa"] for item in list_of_dict
         ]
 
         company_t = Counter(companies).most_common(1)
-        x, y = company_t[0]
 
         return (
-            f"Data de fabricação mais antiga: {min(fab_date)}"
-            f"Data de validade mais próxima: {min(valid_date)}"
-            f"Empresa com mais produtos: {x}"
+            f"Data de fabricação mais antiga: {min(fab_date)}\n"
+            f"Data de validade mais próxima: {min(valid_date)}\n"
+            f"Empresa com mais produtos: {company_t[0][0]}"
         )
