@@ -4,7 +4,7 @@ from collections import Counter
 
 class SimpleReport:
     @staticmethod
-    def generate(self, list_of_dict):
+    def generate(list_of_dict: list):
         fab_date = [
             list_of_dict["data_de_fabricacao"] for item in list_of_dict
         ]
