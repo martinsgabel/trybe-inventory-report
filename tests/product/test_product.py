@@ -11,7 +11,7 @@ def test_cria_produto():
         '01/01/2021',
         '01/01/2050',
         '457230',
-        'manter em local arejado e seco'
+        'instruções'
     )
 
     assert product_instance.id == '0'
@@ -20,5 +20,4 @@ def test_cria_produto():
     assert product_instance.data_de_fabricacao == '01/01/2021'
     assert product_instance.data_de_validade == '01/01/2050'
     assert product_instance.numero_de_serie == '457230'
-    assert product_instance.instrucoes_de_armazenamento == 'manter em local'
-    ' arejado e seco'
+    assert product_instance.instrucoes_de_armazenamento == 'instruções'
