@@ -9,6 +9,9 @@ class CsvImporter(Importer):
         data = []
 
         try:
+            if not path.endswith('.csv'):
+                raise ValueError
+
             with open(path, mode="r") as file:
                 csv_file = csv.DictReader(file)
                 for line in csv_file:

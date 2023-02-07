@@ -6,6 +6,9 @@ class XmlImporter(Importer):
     @staticmethod
     def import_data(path: str):
         try:
+            if not path.endswith(".xml"):
+                raise ValueError
+
             with open(path, mode="r") as file:
                 xml_file = xmltodict.parse(file.read())
                 formated_file = xml_file["dataset"]["record"]

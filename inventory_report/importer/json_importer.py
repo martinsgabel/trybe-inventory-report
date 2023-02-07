@@ -6,6 +6,9 @@ class JsonImporter(Importer):
     @staticmethod
     def import_data(path: str):
         try:
+            if not path.endswith(".json"):
+                raise ValueError
+
             with open(path, mode="r") as file:
                 json_file = json.load(file)
                 return json_file
